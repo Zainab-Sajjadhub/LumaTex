@@ -1,0 +1,130 @@
+/* 
+  This CSS file styles the LumaText interface with a clean, modern design. 
+  It sets global styles, customizes fonts, layouts, and adds light and dark mode support. 
+  It also styles the logo, header image, settings panel, content areas, upload sections, 
+  and interactive elements like buttons and textareas to make the site visually appealing 
+  and accessible for users with disabilities.
+*/
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f8fc;
+  color: black;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 4rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #5b6eff;
+  text-align: center;
+  margin-bottom: -2rem;
+}
+
+.logo:hover {
+text-shadow: 0 0 10px #5b6eff, 0 0 20px #a46bff, 0 0 30px #5b6eff;
+color: #ffffff;
+}
+.header-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.settings-banner {
+  background: linear-gradient(90deg, #a1c4fd, #c2b6ff);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 5rem auto 2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.settings label {
+  font-size: 1rem;
+}
+
+.settings select,
+.settings input[type="range"],
+.settings button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  text-align: left;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .settings-banner {
+  background: linear-gradient(90deg, #5b6eff, #a46bff);
+}
+
+body.dark-mode .content {
+  background: #1f1f1f;
+
+}.upload-container {
+  background: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.upload-container input[type="file"],
+.upload-container button {
+  margin: 1rem 0;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.upload-container textarea {
+  width: 100%;
+  height: 150px;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+}

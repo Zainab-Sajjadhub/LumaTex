@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LumaText AI</title>
+    <link rel="stylesheet" href="luma.css">
+</head>
+<body>
+<!-- 
+  This HTML file builds the front-end for LumaText, an AI-powered accessibility tool. 
+  It allows users to upload text or PDF files, customize font settings, switch between dark and light modes, 
+  listen to text through text-to-speech, and summarize documents using AI. It also includes a microphone feature 
+  for speech-to-text notes. The design is simple and focuses on making reading and note-taking easier, especially 
+  for users with disabilities like dyslexia.
+-->
+<div class="logo">LumaText</div>
+
+<img src="https://i.pinimg.com/736x/b8/1b/90/b81b90dee93519880e3b348d97ff78c2.jpg" alt="Decorative Image" class="header-image">
+
+<div class="settings-banner">
+    <div class="settings">
+        <label for="fontSize">Font Size:</label>
+        <input type="range" id="fontSize" min="12" max="36" value="16" onchange="applyTextStyles()">
+
+        <label for="fontFamily">Font Family:</label>
+        <select id="fontFamily" onchange="applyTextStyles()">
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+            <option value="Tahoma, sans-serif">Tahoma</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+        </select>
+
+        <button onclick="readText()">🔊 Read Text</button>
+        <button onclick="toggleDarkMode()">🌙/☀️ Dark/Light Mode</button>
+    </div>
+</div>
+
+<div class="content" id="welcomeContainer">
+    <p id="text">
+        Welcome to LumaText, your AI-powered tool to make reading easier, clearer, and more accessible for everyone!
+    </p>
+</div>
+
+<div class="upload-container">
+    <h2>Upload your file</h2>
+    <input type="file" id="fileInput" accept=".txt, .pdf">
+    <button onclick="handleUpload()">Upload and Analyze</button>
+
+    <h3>Extracted Text:</h3>
+    <textarea id="uploadedText" placeholder="Your text will appear here..."></textarea>
+    <button onclick="summarizeText()">✨ Summarize</button> <br>
+    <button onclick="playAudio('uploadedText')">🔊 Read Extracted Text</button>
+    <button onclick="stopAudio()">🛑 Stop Reading</button>
+
+    <h3>Summary:</h3>
+    <textarea id="summaryText" placeholder="Summary will appear here..."></textarea>
+    <button onclick="playAudio('summaryText')">🔊 Read Summary</button>
+    <button onclick="stopAudio()">🛑 Stop Reading</button>
+
+
+    <h3>Microphone Notes:</h3>
+    <button id="micButton" onclick="startListening()">🎤 Start Speaking</button>
+    <button id="stopButton" onclick="stopListening()" style="display: none;">🛑 Stop Speaking</button>
+    <button onclick="clearMicNotes()">🗑️ Clear Notes</button>
+    <textarea id="micNotes" placeholder="Notes from microphone..."></textarea>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+<script src="luma.js"></script>
+
+</body>
+</html>
