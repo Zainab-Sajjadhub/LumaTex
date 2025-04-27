@@ -7,3 +7,8 @@ Accessibility and customization are at the heart of LumaText. Users can adjust f
 
 LumaText combines powerful AI with thoughtful design to create a reading experience that is flexible, supportive, and truly inclusive. It's not just a tool — it’s a step toward making education and information accessible for everyone, regardless of their challenges.
 
+
+
+
+
+REMOVED THE API KEY FOR SECURITY REASONS
